@@ -14,12 +14,12 @@ import numpy as np
 from tensorflow import keras
 import pickle
 
-DeepLearningModel = keras.models.load_model(r"C:\Users\SAYYID NAJEEB\Downloads\Spam_mail_ANN.h5")
+DeepLearningModel = keras.models.load_model("Spam_mail_ANN.h5")
 
 st.title("Email Spam Detection")
 st.image("https://i0.wp.com/thecleverprogrammer.com/wp-content/uploads/2020/05/Untitled-46.png?resize=600%2C353&ssl=1")
-model = pickle.load(open(r"C:\Users\SAYYID NAJEEB\Downloads\Spam_mail_prediction", 'rb'))
-train = pickle.load(open(r"C:\Users\SAYYID NAJEEB\Downloads\MailData", 'rb'))
+model = pickle.load(open("Spam_mail_prediction", 'rb'))
+train = pickle.load(open("MailData", 'rb'))
 text = st.text_input('Enter your Email Here!')
 tff = TF(stop_words='english', lowercase=True)
 train_features = tff.fit_transform(train)
